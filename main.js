@@ -61,6 +61,8 @@ workBtnContainer.addEventListener("click", (e) => {
     return;
   }
 
+  projectContainer.classList.add("anime-out");
+
   projects.forEach((project) => {
     if (filter === "*" || filter === project.dataset.type) {
       project.classList.remove("invisible");
@@ -68,6 +70,10 @@ workBtnContainer.addEventListener("click", (e) => {
       project.classList.add("invisible");
     }
   });
+
+  setTimeout(() => {
+    projectContainer.classList.remove("anime-out");
+  }, 300);
 });
 
 function scrollIntoViews(selector) {
